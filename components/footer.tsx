@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   const quickLinks = [
@@ -17,7 +18,18 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-primary">Prakriti Aircon</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-lg overflow-hidden">
+                <Image
+                  src="/companyLogo.jpg"
+                  alt="Prakriti Aircon Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-primary">Prakriti Aircon</h3>
+            </div>
             <p className="text-gray-300 text-pretty">
               Your trusted HVAC partner providing comprehensive solutions for residential and commercial spaces with a
               focus on sustainability and energy efficiency.
@@ -71,18 +83,18 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <p className="text-gray-300 text-sm">
-                  123 HVAC Street, Industrial Area
+                  120 A Pulak City, Silicon City
                   <br />
-                  Mumbai, Maharashtra 400001
+                  Indore, Madhya Pradesh 452001
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <p className="text-gray-300 text-sm">+91 98765 43210</p>
+                <p className="text-gray-300 text-sm">+91 9303178304</p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <p className="text-gray-300 text-sm">info@prakritiaircon.com</p>
+                <p className="text-gray-300 text-sm">infoprakritiaircon@gmail.com</p>
               </div>
             </div>
           </div>

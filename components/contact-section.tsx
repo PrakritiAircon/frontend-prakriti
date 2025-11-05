@@ -234,14 +234,9 @@ export function ContactSection() {
                       <p className="text-muted-foreground mb-2">
                         <strong>Head Office:</strong>
                         <br />
-                        Pulak City
+                        120 A Pulak City, Silicon City
                         <br />
-                        Silicon City, Indore, MadhyaPradesh 452001
-                      </p>
-                      <p className="text-muted-foreground">
-                        <strong>Branch Office:</strong>
-                        <br />
-                        Devas Naka, Indore, MadhyaPradesh
+                        Indore, Madhya Pradesh 452001
                       </p>
                     </>
                   ),
@@ -255,15 +250,15 @@ export function ContactSection() {
                       <p className="text-muted-foreground">
                         <strong>Anurag Sharma :</strong>
                         <br />
-                        <a href="tel:+919171743927" className="text-primary hover:underline">
-                          +91 9171743927
+                        <a href="tel:+919303178304" className="text-primary hover:underline">
+                          +91 9303178304
                         </a>
                       </p>
                       <p className="text-muted-foreground">
                         <strong>Emergency Service:</strong>
                         <br />
-                        <a href="tel:+911800123456" className="text-primary hover:underline">
-                          1800-123-456 (Toll Free)
+                        <a href="tel:+919303178304" className="text-primary hover:underline">
+                          93031-78304
                         </a>
                       </p>
                     </div>
@@ -278,15 +273,15 @@ export function ContactSection() {
                       <p className="text-muted-foreground">
                         <strong>General Inquiries:</strong>
                         <br />
-                        <a href="mailto:info@prakritiaircon.com" className="text-primary hover:underline">
-                          info@prakritiaircon.com
+                        <a href="mailto:infoprakritiaircon@gmail.com" className="text-primary hover:underline">
+                          infoprakritiaircon@gmail.com
                         </a>
                       </p>
                       <p className="text-muted-foreground">
                         <strong>Sales & Quotes:</strong>
                         <br />
-                        <a href="mailto:sales@prakritiaircon.com" className="text-primary hover:underline">
-                          sales@prakritiaircon.com
+                        <a href="mailto:contactprakritiaircon@gmail.com" className="text-primary hover:underline">
+                          contactprakritiaircon@gmail.com
                         </a>
                       </p>
                     </div>

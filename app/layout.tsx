@@ -10,7 +10,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Prakriti Aircon - Premium HVAC Solutions",
+  title: "Prakriti Aircon - Creating Your Climate of Comfort",
   description:
     "Leading provider of comprehensive HVAC solutions, ducting materials, and evaporative coolers. Expert installation and maintenance services.",
   generator: "v0.app",

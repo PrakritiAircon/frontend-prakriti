@@ -34,55 +34,44 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-32 pb-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50"
       ref={sectionRef}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-teal-500 to-green-500 animate-gradient"></div>
-      <div className="absolute inset-0 bg-black/30"></div>
-
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 animate-float">
-          <Wind className="h-20 w-20 text-white drop-shadow-lg" />
-        </div>
-        <div className="absolute top-40 right-32 animate-float" style={{ animationDelay: "1s" }}>
-          <Thermometer className="h-16 w-16 text-white drop-shadow-lg" />
-        </div>
-        <div className="absolute bottom-32 left-32 animate-float" style={{ animationDelay: "2s" }}>
-          <Leaf className="h-18 w-18 text-white drop-shadow-lg" />
-        </div>
-        <div className="absolute top-1/2 right-20 animate-float" style={{ animationDelay: "0.5s" }}>
-          <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-sm"></div>
-        </div>
-        <div className="absolute bottom-20 right-1/3 animate-float" style={{ animationDelay: "1.5s" }}>
-          <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm"></div>
-        </div>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-40 right-20 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
+      <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
-          <div className="animate-on-scroll">
-            <div className="mb-6">
-              <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
-                🌿 India's Leading HVAC Solutions Provider
-              </span>
-            </div>
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 text-balance leading-tight">
-              <span className="block">Prakriti</span>
-              <span className="block bg-gradient-to-r from-white via-blue-100 to-green-100 bg-clip-text text-transparent">
-                Aircon
-              </span>
-            </h1>
-            <p className="text-2xl md:text-3xl mb-4 font-light text-blue-100">Premium HVAC Solutions & Services</p>
-            <p className="text-lg md:text-xl mb-12 text-white/90 max-w-3xl mx-auto text-pretty leading-relaxed">
-              Transform your space with our comprehensive HVAC solutions. From advanced ducting systems to eco-friendly
-              evaporative coolers, we deliver comfort, efficiency, and sustainability in every project.
-            </p>
+          {/* Badge */}
+          <div className="mb-8">
+            <span className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-sm font-semibold shadow-sm">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+              India's Leading HVAC Solutions Provider
+            </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-on-scroll">
+          {/* Main Heading */}
+          <h1 className="text-6xl md:text-8xl font-black mb-8 text-gray-900 leading-none tracking-tight">
+            Prakriti Aircon
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-2xl md:text-3xl mb-6 text-gray-700 font-light">Creating Your Climate of Comfort</p>
+
+          {/* Description */}
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Transform your space with our comprehensive HVAC solutions. From advanced ducting systems to eco-friendly evaporative coolers, we deliver comfort and efficiency.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
             <Button
               size="lg"
-              className="bg-white text-primary hover:bg-blue-50 text-lg px-10 py-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 font-semibold"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
             >
               Get Free Consultation
               <ArrowRight className="ml-3 h-6 w-6" />
@@ -90,14 +79,15 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-10 py-4 rounded-full bg-white/10 backdrop-blur-sm font-semibold transition-all duration-300 hover:scale-105"
+              className="border-2 border-gray-300 text-gray-700 hover:bg-gray-100 px-10 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105"
             >
-              <Play className="mr-3 h-5 w-5" />
+              <Play className="mr-3 h-6 w-6" />
               Watch Our Work
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto animate-on-scroll">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {[
               { number: "1000+", label: "Projects Completed", icon: "🏢" },
               { number: "15+", label: "Years Experience", icon: "⭐" },
@@ -106,30 +96,14 @@ export function HeroSection() {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all transform hover:scale-105"
               >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
-                <div className="text-white/80 font-medium">{stat.label}</div>
+                <div className="text-4xl mb-4">{stat.icon}</div>
+                <div className="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
-
-          <div className="mt-16 animate-on-scroll">
-            <p className="text-white/70 mb-6 text-sm">Trusted by leading companies across India</p>
-            <div className="flex justify-center items-center gap-8 opacity-60">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="w-20 h-12 bg-white/20 rounded-lg backdrop-blur-sm"></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone, Mail, Sun, Moon } from "lucide-react"
 import { useTheme } from "next-themes"
+import Image from "next/image"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -25,109 +26,118 @@ export function Header() {
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
     { href: "#projects", label: "Projects" },
-    { href: "#team", label: "Team" },
     { href: "#contact", label: "Contact" },
   ]
 
   if (!mounted) return null
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-background/95 backdrop-blur-xl shadow-2xl border-b border-border" : "bg-transparent"
-      }`}
-    >
-      <div className="bg-gradient-to-r from-primary via-secondary to-accent text-white py-3 px-4 text-sm animate-gradient">
-        <div className="container mx-auto flex justify-between items-center">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b border-gray-100">
+      {/* Top Contact Bar */}
+      <div className="bg-gray-900 text-white py-2">
+        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 hover:scale-105 transition-transform">
+            <div className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span className="font-medium">+91 9171743927</span>
+              <span>+91 9303178304</span>
             </div>
-            <div className="flex items-center gap-2 hover:scale-105 transition-transform">
+            <div className="hidden sm:flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <span className="font-medium">info@prakritiaircon.com</span>
+              <span>infoprakritiaircon@gmail.com</span>
             </div>
           </div>
           <div className="hidden md:block">
-            <span className="font-semibold">🌿 Your Eco-Friendly HVAC Partner</span>
+            <span className="text-gray-300">India's Premier HVAC Solutions Provider</span>
           </div>
         </div>
       </div>
 
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center animate-pulse-glow">
-                <span className="text-white font-bold text-xl">P</span>
+      {/* Main Navigation */}
+      <nav className="bg-white">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/companyLogo.jpg"
+                  alt="Prakriti Aircon Logo"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">Prakriti Aircon</h1>
+                <p className="text-sm text-gray-600">Creating Your Climate of Comfort</p>
               </div>
             </div>
-            <div>
-              <h1 className="text-2xl font-bold gradient-text">Prakriti Aircon</h1>
-              <p className="text-xs text-muted-foreground">Premium HVAC Solutions</p>
-            </div>
-          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
-            <Button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              variant="ghost"
-              size="icon"
-              className="hover:bg-primary/10"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-            <Button className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              Get Free Quote
-            </Button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-2">
-            <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} variant="ghost" size="icon">
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-            <button
-              className="p-2 hover:bg-muted rounded-lg transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border animate-fade-in-up">
-            <div className="flex flex-col space-y-4 pt-4">
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-muted"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
                 >
                   {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
-              <Button className="bg-gradient-to-r from-primary to-secondary text-white w-fit mx-4">
+              <Button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                variant="ghost"
+                size="icon"
+                className="text-gray-600 hover:text-blue-600"
+              >
+                {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </Button>
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
                 Get Free Quote
               </Button>
             </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden flex items-center gap-2">
+              <Button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                variant="ghost"
+                size="icon"
+                className="text-gray-600"
+              >
+                {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </Button>
+              <button
+                className="p-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
-        )}
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden mt-4 pt-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-3">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white mt-2 mx-3">
+                  Get Free Quote
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
       </nav>
     </header>
   )
