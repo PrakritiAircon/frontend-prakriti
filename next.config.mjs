@@ -9,14 +9,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-
-  // Conditional config for GitHub Pages deployment
-  ...(process.env.NODE_ENV === 'production' && {
-    output: "export",
-    basePath: "/prakritiAircon",
-    assetPrefix: "/prakritiAircon",
-    trailingSlash: true,
-  }),
+  output: "export",
+  basePath: "/prakritiAircon",
+  assetPrefix: "/prakritiAircon",
+  trailingSlash: true,
 };
 
 export default nextConfig;
