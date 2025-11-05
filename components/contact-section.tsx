@@ -234,14 +234,14 @@ export function ContactSection() {
                       <p className="text-muted-foreground mb-2">
                         <strong>Head Office:</strong>
                         <br />
-                        123 HVAC Complex, Industrial Area
+                        Pulak City
                         <br />
-                        Sector 15, Mumbai, Maharashtra 400001
+                        Silicon City, Indore, MadhyaPradesh 452001
                       </p>
                       <p className="text-muted-foreground">
                         <strong>Branch Office:</strong>
                         <br />
-                        456 Tech Park, Pune, Maharashtra 411001
+                        Devas Naka, Indore, MadhyaPradesh
                       </p>
                     </>
                   ),
@@ -253,7 +253,7 @@ export function ContactSection() {
                   content: (
                     <div className="space-y-2">
                       <p className="text-muted-foreground">
-                        <strong>Anurag Sharma (CEO):</strong>
+                        <strong>Anurag Sharma :</strong>
                         <br />
                         <a href="tel:+919171743927" className="text-primary hover:underline">
                           +91 9171743927
