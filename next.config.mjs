@@ -10,11 +10,13 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  // IMPORTANT for static export to GitHub Pages
-  output: "export",
-  basePath: "/prakritiAircon",
-  assetPrefix: "/prakritiAircon/",
-  trailingSlash: true, // makes routes like /about/ -> out/about/index.html
+  // Conditional config for GitHub Pages deployment
+  ...(process.env.NODE_ENV === 'production' && {
+    output: "export",
+    basePath: "/prakritiAircon",
+    assetPrefix: "/prakritiAircon/",
+    trailingSlash: true,
+  }),
 };
 
 export default nextConfig;
