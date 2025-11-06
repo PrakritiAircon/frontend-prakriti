@@ -8,6 +8,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageSquare, Calendar } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { SiteVisitForm } from "@/components/site-visit-form"
+import { contactAPI, type ContactFormData } from "@/lib/api"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -49,18 +51,21 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    console.log("Form submitted:", formData)
-    setIsSubmitted(true)
-    setIsSubmitting(false)
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" })
-      setIsSubmitted(false)
-    }, 3000)
+    try {
+      await contactAPI.submitContact(formData as ContactFormData)
+      setIsSubmitted(true)
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+        setIsSubmitted(false)
+      }, 3000)
+    } catch (error) {
+      console.error('Error submitting contact form:', error)
+      alert('Failed to submit contact form. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -333,13 +338,7 @@ export function ContactSection() {
                   <MessageSquare className="mr-2 h-5 w-5" />
                   WhatsApp Chat
                 </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white py-4 rounded-full font-semibold bg-transparent"
-                >
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Schedule Site Visit
-                </Button>
+                <SiteVisitForm />
               </div>
             </div>
           </div>
