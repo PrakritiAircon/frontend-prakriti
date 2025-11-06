@@ -196,7 +196,7 @@ export function ContactSection() {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white text-lg py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold"
+                        className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-lg py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-semibold"
                       >
                         {isSubmitting ? (
                           <>
@@ -327,7 +327,7 @@ export function ContactSection() {
 
               <div className="space-y-4 animate-on-scroll">
                 <Button
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-full font-semibold"
+                  className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white py-4 rounded-full font-semibold"
                   onClick={() => window.open("https://wa.me/919171743927", "_blank")}
                 >
                   <MessageSquare className="mr-2 h-5 w-5" />
@@ -335,7 +335,7 @@ export function ContactSection() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-4 rounded-full font-semibold bg-transparent"
+                  className="w-full border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white py-4 rounded-full font-semibold bg-transparent"
                 >
                   <Calendar className="mr-2 h-5 w-5" />
                   Schedule Site Visit

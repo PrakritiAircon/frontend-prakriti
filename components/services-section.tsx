@@ -85,23 +85,23 @@ export function ServicesSection() {
   ]
 
   return (
-    <section id="services" className="py-24 bg-background" ref={sectionRef}>
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 animate-on-scroll">
+    <section id="services" className="py-12 sm:py-24 bg-background w-full overflow-hidden" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="w-full">
+          <div className="text-center mb-12 sm:mb-20 animate-on-scroll">
             <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full text-sm font-semibold">
+              <span className="bg-gradient-to-r from-primary to-secondary text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold">
                 Our Premium Services
               </span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">Comprehensive HVAC Solutions</h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 gradient-text px-2">Comprehensive HVAC Solutions</h2>
+            <p className="text-base sm:text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed px-4">
               From cutting-edge ducting materials to professional installation and eco-friendly cooling systems, we
               deliver complete HVAC solutions that exceed expectations and industry standards.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-10">
             {services.map((service, index) => (
               <Card
                 key={index}
@@ -166,7 +166,7 @@ export function ServicesSection() {
                     </div>
                   </div>
 
-                  <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button className="w-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                     Get Quote
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -175,26 +175,26 @@ export function ServicesSection() {
             ))}
           </div>
 
-          <div className="mt-20 animate-on-scroll">
-            <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-3xl p-12">
-              <div className="text-center mb-12">
-                <h3 className="text-4xl font-bold gradient-text mb-4">Why Choose Our Services?</h3>
-                <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <div className="mt-12 sm:mt-20 animate-on-scroll">
+            <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-2xl sm:rounded-3xl p-6 sm:p-12">
+              <div className="text-center mb-8 sm:mb-12">
+                <h3 className="text-2xl sm:text-4xl font-bold gradient-text mb-4">Why Choose Our Services?</h3>
+                <p className="text-muted-foreground text-base sm:text-lg max-w-3xl mx-auto px-4">
                   We combine cutting-edge technology with decades of expertise to deliver unmatched HVAC solutions
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
                 {[
                   { icon: Shield, title: "Quality Assured", desc: "ISO certified processes" },
                   { icon: Zap, title: "Energy Efficient", desc: "Up to 40% savings" },
                   { icon: Leaf, title: "Eco-Friendly", desc: "Sustainable solutions" },
                   { icon: CheckCircle, title: "Guaranteed", desc: "100% satisfaction" },
                 ].map((item, index) => (
-                  <div key={index} className="text-center p-6 rounded-xl hover:bg-card/50 transition-colors">
-                    <item.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h4 className="text-xl font-bold text-foreground mb-2">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.desc}</p>
+                  <div key={index} className="text-center p-3 sm:p-6 rounded-xl hover:bg-card/50 transition-colors">
+                    <item.icon className="h-8 w-8 sm:h-12 sm:w-12 text-primary mx-auto mb-2 sm:mb-4" />
+                    <h4 className="text-sm sm:text-xl font-bold text-foreground mb-1 sm:mb-2">{item.title}</h4>
+                    <p className="text-muted-foreground text-xs sm:text-base">{item.desc}</p>
                   </div>
                 ))}
               </div>
