@@ -13,9 +13,9 @@ export function ProjectsSection() {
     {
       title: "Residential Villa Project",
       category: "Residential",
-      description: "Custom evaporative cooling system for luxury villa with smart climate control integration.",
+      description: "Custom Symphony evaporative cooling system for luxury villa with smart climate control integration and official warranty support.",
       image: "/luxury-villa-air-conditioning-system.jpg",
-      tags: ["Evaporative Cooling", "Residential", "Smart Controls"],
+      tags: ["Symphony Cooling", "Residential", "Smart Controls"],
     },
     {
       title: "Industrial Warehouse",
@@ -55,7 +55,7 @@ export function ProjectsSection() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Our Projects</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
               Showcasing our expertise through successful HVAC installations across various industries and project
-              scales.
+              scales, including authentic Symphony cooling solutions with complete warranty support.
             </p>
           </div>
 

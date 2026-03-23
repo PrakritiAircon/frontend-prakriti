@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageSquare, Calendar } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageSquare, Calendar, Award, Star } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { SiteVisitForm } from "@/components/site-visit-form"
 import { contactAPI, type ContactFormData } from "@/lib/api"
@@ -227,108 +227,89 @@ export function ContactSection() {
                   )}
                 </CardContent>
               </Card>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  icon: MapPin,
-                  title: "Visit Our Office",
-                  content: (
-                    <>
-                      <p className="text-muted-foreground mb-2">
-                        <strong>Head Office:</strong>
-                        <br />
-                        120 A Pulak City, Silicon City
-                        <br />
-                        Indore, Madhya Pradesh 452001
-                      </p>
-                    </>
-                  ),
-                  color: "text-primary",
-                },
-                {
-                  icon: Phone,
-                  title: "Call Us Now",
-                  content: (
-                    <div className="space-y-2">
-                      <p className="text-muted-foreground">
-                        <strong>Anurag Sharma :</strong>
-                        <br />
-                        <a href="tel:+919303178304" className="text-primary hover:underline">
-                          +91 9303178304
-                        </a>
-                      </p>
-                      <p className="text-muted-foreground">
-                        <strong>Emergency Service:</strong>
-                        <br />
-                        <a href="tel:+919303178304" className="text-primary hover:underline">
-                          93031-78304
-                        </a>
-                      </p>
-                    </div>
-                  ),
-                  color: "text-secondary",
-                },
-                {
-                  icon: Mail,
-                  title: "Email Us",
-                  content: (
-                    <div className="space-y-2">
-                      <p className="text-muted-foreground">
-                        <strong>General Inquiries:</strong>
-                        <br />
-                        <a href="mailto:infoprakritiaircon@gmail.com" className="text-primary hover:underline">
-                          infoprakritiaircon@gmail.com
-                        </a>
-                      </p>
-                      <p className="text-muted-foreground">
-                        <strong>Sales & Quotes:</strong>
-                        <br />
-                        <a href="mailto:contactprakritiaircon@gmail.com" className="text-primary hover:underline">
-                          contactprakritiaircon@gmail.com
-                        </a>
-                      </p>
-                    </div>
-                  ),
-                  color: "text-accent",
-                },
-                {
-                  icon: Clock,
-                  title: "Business Hours",
-                  content: (
-                    <div className="space-y-2">
-                      <p className="text-muted-foreground">
-                        <strong>Monday - Friday:</strong> 9:00 AM - 7:00 PM
-                        <br />
-                        <strong>Saturday:</strong> 9:00 AM - 5:00 PM
-                        <br />
-                        <strong>Sunday:</strong> Emergency Service Only
-                      </p>
-                      <p className="text-sm text-primary font-medium">24/7 Emergency Support Available</p>
-                    </div>
-                  ),
-                  color: "text-primary",
-                },
-              ].map((item, index) => (
-                <Card
-                  key={index}
-                  className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 gradient-card border-0 animate-on-scroll"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
+              
+              {/* Contact Info Below Form */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 gradient-card border-0">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className={`p-3 rounded-full bg-primary/10 ${item.color}`}>
-                        <item.icon className="h-6 w-6" />
+                      <div className="p-3 rounded-full bg-primary/10 text-accent">
+                        <Mail className="h-6 w-6" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-foreground mb-3 text-lg">{item.title}</h3>
-                        {item.content}
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Email Us</h3>
+                        <div className="space-y-2">
+                          <p className="text-muted-foreground">
+                            <strong>General:</strong><br />
+                            <a href="mailto:info@prakritiaircon.in" className="text-primary hover:underline">
+                              info@prakritiaircon.in
+                            </a>
+                          </p>
+                          <p className="text-muted-foreground">
+                            <strong>Sales:</strong><br />
+                            <a href="mailto:sales@prakritiaircon.com" className="text-primary hover:underline">
+                              sales@prakritiaircon.com
+                            </a>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+                
+                <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 gradient-card border-0">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-full bg-primary/10 text-primary">
+                        <Clock className="h-6 w-6" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-foreground mb-3 text-lg">Business Hours</h3>
+                        <div className="space-y-2">
+                          <p className="text-muted-foreground">
+                            <strong>Mon-Fri:</strong> 9:00 AM - 7:00 PM<br />
+                            <strong>Saturday:</strong> 9:00 AM - 5:00 PM<br />
+                            <strong>Sunday:</strong> Emergency Only
+                          </p>
+                          <p className="text-sm text-primary font-medium">24/7 Emergency Support</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {/* Symphony Official Dealer Badge */}
+              <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-0 animate-on-scroll bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950 dark:to-indigo-900 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full -translate-y-10 translate-x-10 opacity-20"></div>
+                <CardContent className="p-6 relative z-10">
+                  <div className="text-center">
+                    <div className="flex justify-center mb-4">
+                      <div className="p-4 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg">
+                        <Award className="h-8 w-8" />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-xl mb-2 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                      Symphony Official Dealer
+                    </h3>
+                    <div className="flex justify-center gap-1 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Authorized dealer for Symphony evaporative coolers and air cooling solutions
+                    </p>
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-3 border border-blue-200 dark:border-blue-700 shadow-inner">
+                      <p className="text-xs font-medium text-blue-600 dark:text-blue-400">
+                        ✓ Genuine Products ✓ Warranty Support ✓ Expert Installation
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
               <div className="space-y-4 animate-on-scroll">
                 <Button

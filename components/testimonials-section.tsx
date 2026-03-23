@@ -14,7 +14,7 @@ export function TestimonialsSection() {
       name: "Priya Sharma",
       company: "Sharma Residency",
       rating: 5,
-      text: "The evaporative cooling system they installed in our home is amazing. It's eco-friendly, cost-effective, and keeps our house perfectly comfortable even in peak summer.",
+      text: "The Symphony evaporative cooling system they installed in our home is amazing. Being an official dealer, they provided genuine products with full warranty. It's eco-friendly, cost-effective, and keeps our house perfectly comfortable even in peak summer.",
       image: "/professional-indian-woman-homeowner.jpg",
     },
     {
@@ -40,8 +40,8 @@ export function TestimonialsSection() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">What Our Clients Say</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-              Don't just take our word for it. Here's what our satisfied customers have to say about our HVAC solutions
-              and services.
+              Don't just take our word for it. Here's what our satisfied customers have to say about our HVAC solutions,
+              Symphony cooling systems, and professional services.
             </p>
           </div>
 

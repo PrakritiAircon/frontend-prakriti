@@ -48,8 +48,8 @@ export function HeroSection() {
           <div className="mb-6 sm:mb-8">
             <span className="inline-flex items-center bg-blue-100 text-blue-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-semibold shadow-sm">
               <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-              <span className="hidden sm:inline">India's Leading HVAC Solutions Provider</span>
-              <span className="sm:hidden">Leading HVAC Provider</span>
+              <span className="hidden sm:inline">Symphony Official Dealer | India's Leading HVAC Provider</span>
+              <span className="sm:hidden">Symphony Official Dealer</span>
             </span>
           </div>
 
@@ -60,7 +60,7 @@ export function HeroSection() {
           <p className="text-lg sm:text-2xl md:text-3xl mb-4 sm:mb-6 text-gray-700 font-light px-2">Creating Your Climate of Comfort</p>
 
           <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
-            Transform your space with our comprehensive HVAC solutions. From advanced ducting systems to eco-friendly evaporative coolers, we deliver comfort and efficiency.
+            Transform your space with our comprehensive HVAC solutions. From advanced ducting systems to authentic Symphony evaporative coolers, we deliver comfort and efficiency with genuine products and expert installation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-20 px-4">

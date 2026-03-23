@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, Mail, Sun, Moon } from "lucide-react"
+import { Menu, X, Phone, Mail, Sun, Moon, Award, Star } from "lucide-react"
 import { useTheme } from "next-themes"
 import Image from "next/image"
 
@@ -43,11 +43,23 @@ export function Header() {
             </div>
             <div className="hidden sm:flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <span className="text-sm">infoprakritiaircon@gmail.com</span>
+              <span className="text-sm">sales@prakritiaircon.com</span>
             </div>
           </div>
-          <div className="hidden md:block">
-            <span className="text-gray-300 text-sm">India's Premier HVAC Solutions Provider</span>
+          <div className="flex items-center gap-4">
+            {/* Symphony Official Dealer Badge */}
+            <div className="hidden md:flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/30">
+              <Award className="h-4 w-4 text-yellow-300" />
+              <span className="text-sm font-semibold">Symphony Official Dealer</span>
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3 w-3 fill-yellow-300 text-yellow-300" />
+                ))}
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <span className="text-gray-300 text-sm">India's Premier HVAC Solutions Provider</span>
+            </div>
           </div>
         </div>
       </div>
@@ -60,7 +72,7 @@ export function Header() {
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/companyLogo.jpg"
+                  src="/companyLogo.png"
                   alt="Prakriti Aircon Logo"
                   width={48}
                   height={48}
@@ -69,7 +81,14 @@ export function Header() {
               </div>
               <div className="min-w-0">
                 <h1 className="text-lg sm:text-2xl font-bold text-gray-900 truncate">Prakriti Aircon</h1>
-                <p className="text-xs sm:text-sm text-gray-600 hidden sm:block">Creating Your Climate of Comfort</p>
+                <div className="flex items-center gap-2">
+                  <p className="text-xs sm:text-sm text-gray-600 hidden sm:block">Creating Your Climate of Comfort</p>
+                  {/* Mobile Symphony Badge */}
+                  <div className="md:hidden flex items-center gap-1 bg-gray-800 text-white px-2 py-0.5 rounded-full text-xs">
+                    <Award className="h-3 w-3" />
+                    <span className="font-medium">Symphony Dealer</span>
+                  </div>
+                </div>
               </div>
             </div>
 

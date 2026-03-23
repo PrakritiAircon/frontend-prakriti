@@ -68,16 +68,17 @@ export function ServicesSection() {
     },
     {
       icon: <Wind className="h-16 w-16 text-accent" />,
-      title: "Eco-Friendly Evaporative Coolers",
+      title: "Symphony Evaporative Coolers",
       description:
-        "Revolutionary evaporative cooling systems that deliver superior comfort while reducing energy consumption and environmental impact significantly.",
+        "Authorized Symphony dealer offering genuine evaporative cooling systems that deliver superior comfort while reducing energy consumption and environmental impact significantly.",
       features: [
+        "Genuine Symphony Products - Authentic with full warranty",
         "Energy Efficient Technology - 80% less power consumption",
         "Eco-Friendly Operation - Zero harmful emissions",
         "Superior Air Quality - Natural air purification",
-        "Cost-Effective Cooling - Lowest operating costs",
+        "Expert Installation - Certified Symphony technicians",
       ],
-      benefits: ["90% energy savings", "Improved air quality", "Eco-friendly operation"],
+      benefits: ["Official warranty", "90% energy savings", "Improved air quality", "Eco-friendly operation"],
       color: "border-accent/20 hover:border-accent/60",
       bgGradient: "from-teal-50 to-teal-100",
       image: "/eco-friendly-evaporative-cooling-system.jpg",
@@ -96,8 +97,9 @@ export function ServicesSection() {
             </div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 gradient-text px-2">Comprehensive HVAC Solutions</h2>
             <p className="text-base sm:text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed px-4">
-              From cutting-edge ducting materials to professional installation and eco-friendly cooling systems, we
-              deliver complete HVAC solutions that exceed expectations and industry standards.
+              From cutting-edge ducting materials to professional installation and authentic Symphony cooling systems, we
+              deliver complete HVAC solutions that exceed expectations and industry standards. As Symphony's official dealer,
+              we guarantee genuine products with full warranty support.
             </p>
           </div>
 

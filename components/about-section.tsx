@@ -45,7 +45,7 @@ export function AboutSection() {
               We are India's leading provider of comprehensive HVAC solutions, delivering high-quality,
               energy-efficient, and sustainable climate control systems for both residential and commercial clients.
               With over a decade of excellence, we've transformed thousands of spaces into comfortable, healthy
-              environments.
+              environments. As an authorized Symphony Official Dealer, we bring you premium evaporative cooling solutions.
             </p>
           </div>
 
@@ -59,7 +59,8 @@ export function AboutSection() {
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   To revolutionize the HVAC industry by providing innovative, eco-friendly, and energy-efficient climate
                   solutions that enhance comfort while protecting our environment. We strive to exceed customer
-                  expectations through superior service and cutting-edge technology.
+                  expectations through superior service and cutting-edge technology. As Symphony's trusted partner,
+                  we deliver authentic cooling solutions with complete warranty support.
                 </p>
               </div>
 
