@@ -1,7 +1,26 @@
 "use client"
 
-import { CheckCircle, Users, Award, Clock, Target, Eye, Heart } from "lucide-react"
+import { CheckCircle, Users, Award, Clock, Target, Eye, Leaf, Zap } from "lucide-react"
 import { useEffect, useRef } from "react"
+
+const stats = [
+  { icon: Users,       number: "500+",  label: "Happy Clients",  from: "from-cyan-500",   to: "to-cyan-700"   },
+  { icon: Award,       number: "50+",   label: "Industry Awards", from: "from-blue-500",  to: "to-blue-700"   },
+  { icon: Clock,       number: "24 / 7",label: "Support",        from: "from-indigo-500", to: "to-indigo-700" },
+  { icon: CheckCircle, number: "99.8%", label: "Success Rate",   from: "from-violet-500", to: "to-violet-700" },
+]
+
+const qualities = [
+  { icon: CheckCircle, title: "Premium Quality Assurance", desc: "ISO certified materials and rigorous testing ensure lasting performance across every installation.", color: "text-cyan-500" },
+  { icon: Leaf,        title: "Eco-Friendly Solutions",    desc: "Sustainable, energy-efficient systems that reduce carbon footprint by up to 40%.",              color: "text-emerald-500" },
+  { icon: Users,       title: "Expert Professional Team",  desc: "Certified technicians with 10+ years of experience and ongoing industry training.",             color: "text-blue-500" },
+]
+
+const coreValues = [
+  { icon: Zap,         title: "Innovation",  desc: "Continuously adopting cutting-edge technologies and sustainable practices to deliver superior solutions.", color: "text-cyan-400",   bg: "bg-cyan-500/10 dark:bg-cyan-500/8"   },
+  { icon: CheckCircle, title: "Integrity",   desc: "Building trust through transparent communication, honest pricing, and reliable service delivery.",        color: "text-blue-400",   bg: "bg-blue-500/10 dark:bg-blue-500/8"   },
+  { icon: Award,       title: "Excellence",  desc: "Maintaining the highest standards in every project, from initial consultation to final installation.",    color: "text-violet-400", bg: "bg-violet-500/10 dark:bg-violet-500/8" },
+]
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -11,153 +30,138 @@ export function AboutSection() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const elements = entry.target.querySelectorAll(".animate-on-scroll")
-            elements.forEach((el, index) => {
-              setTimeout(() => {
-                el.classList.add("animate")
-              }, index * 200)
-            })
+            entry.target.querySelectorAll(".animate-on-scroll").forEach((el, i) =>
+              setTimeout(() => el.classList.add("animate"), i * 90)
+            )
           }
         })
       },
-      { threshold: 0.1 },
+      { threshold: 0.04 }
     )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section id="about" className="py-24 bg-muted/50" ref={sectionRef}>
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 animate-on-scroll">
-            <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full text-sm font-semibold">
-                About Our Company
-              </span>
+    <section id="about" className="py-20 sm:py-28 bg-white dark:bg-[#0a0f1a]" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+        {/* ── HEADER ── */}
+        <div className="text-center mb-16 animate-on-scroll">
+          <span className="section-badge mb-5">
+            <span className="section-badge-dot" />
+            About Our Company
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-black mt-5 mb-5 gradient-text tracking-tight">
+            About Prakriti Aircon
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            India&apos;s leading provider of comprehensive HVAC solutions — delivering energy-efficient,
+            sustainable climate control for residential and commercial clients since 2009.
+            Authorized Symphony Official Dealer with genuine products and complete warranty.
+          </p>
+        </div>
+
+        {/* ── MAIN GRID ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-12">
+
+          {/* LEFT: Mission / Vision / Qualities */}
+          <div className="lg:col-span-3 space-y-5 animate-on-scroll">
+            {/* Mission */}
+            <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-white/6 rounded-2xl p-7 hover:border-cyan-200 dark:hover:border-cyan-500/20 transition-colors duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-9 h-9 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/12 flex items-center justify-center">
+                  <Target className="h-4.5 w-4.5 text-cyan-500" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Our Mission</h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+                To revolutionize the HVAC industry through innovative, eco-friendly, and energy-efficient
+                climate solutions that enhance comfort while protecting our environment. As Symphony&apos;s
+                trusted partner, we deliver authentic cooling with complete warranty support.
+              </p>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">About Prakriti Aircon</h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed">
-              We are India's leading provider of comprehensive HVAC solutions, delivering high-quality,
-              energy-efficient, and sustainable climate control systems for both residential and commercial clients.
-              With over a decade of excellence, we've transformed thousands of spaces into comfortable, healthy
-              environments. As an authorized Symphony Official Dealer, we bring you premium evaporative cooling solutions.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-            <div className="animate-on-scroll">
-              <div className="mb-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Target className="h-8 w-8 text-primary" />
-                  <h3 className="text-3xl font-bold text-foreground">Our Mission</h3>
+            {/* Vision */}
+            <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-white/6 rounded-2xl p-7 hover:border-blue-200 dark:hover:border-blue-500/20 transition-colors duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-9 h-9 rounded-xl bg-blue-500/10 dark:bg-blue-500/12 flex items-center justify-center">
+                  <Eye className="h-4.5 w-4.5 text-blue-500" />
                 </div>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  To revolutionize the HVAC industry by providing innovative, eco-friendly, and energy-efficient climate
-                  solutions that enhance comfort while protecting our environment. We strive to exceed customer
-                  expectations through superior service and cutting-edge technology. As Symphony's trusted partner,
-                  we deliver authentic cooling solutions with complete warranty support.
-                </p>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Our Vision</h3>
               </div>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+                To become India&apos;s most trusted and innovative HVAC company, setting new standards for
+                sustainability, efficiency, and customer satisfaction — making every space we touch
+                greener and more comfortable.
+              </p>
+            </div>
 
-              <div className="mb-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Eye className="h-8 w-8 text-secondary" />
-                  <h3 className="text-3xl font-bold text-foreground">Our Vision</h3>
-                </div>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  To become the most trusted and innovative HVAC company in India, setting new standards for
-                  sustainability, efficiency, and customer satisfaction. We envision a future where every space we touch
-                  contributes to a greener, more comfortable world.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: CheckCircle,
-                    title: "Premium Quality Assurance",
-                    description: "ISO certified materials and rigorous testing standards ensure lasting performance",
-                  },
-                  {
-                    icon: Heart,
-                    title: "Eco-Friendly Solutions",
-                    description: "Sustainable, energy-efficient systems that reduce carbon footprint by up to 40%",
-                  },
-                  {
-                    icon: Users,
-                    title: "Expert Professional Team",
-                    description: "Certified technicians with 10+ years experience and continuous training",
-                  },
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-4 p-4 rounded-xl hover:bg-card transition-colors">
-                    <item.icon className="h-7 w-7 text-primary mt-1 flex-shrink-0" />
+            {/* Quality points */}
+            <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-white/6 rounded-2xl p-7">
+              <h4 className="font-bold text-slate-900 dark:text-white text-base mb-5">Why Clients Trust Us</h4>
+              <div className="space-y-5">
+                {qualities.map((q, i) => (
+                  <div key={i} className="flex items-start gap-3.5">
+                    <q.icon className={`h-4.5 w-4.5 ${q.color} mt-0.5 flex-shrink-0`} />
                     <div>
-                      <h4 className="font-bold text-foreground text-lg mb-2">{item.title}</h4>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <div className="font-semibold text-slate-800 dark:text-slate-200 text-sm">{q.title}</div>
+                      <div className="text-slate-500 dark:text-slate-500 text-[0.8rem] mt-0.5 leading-relaxed">{q.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="grid grid-cols-2 gap-6 animate-on-scroll">
-              {[
-                { icon: Users, number: "500+", label: "Happy Clients", color: "text-primary" },
-                { icon: Award, number: "50+", label: "Industry Awards", color: "text-secondary" },
-                { icon: Clock, number: "24/7", label: "Support Available", color: "text-accent" },
-                { icon: CheckCircle, number: "99.8%", label: "Success Rate", color: "text-primary" },
-              ].map((stat, index) => (
-                <div
-                  key={index}
-                  className="gradient-card p-8 rounded-2xl shadow-xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <stat.icon
-                    className={`h-16 w-16 ${stat.color} mx-auto mb-6 group-hover:scale-110 transition-transform`}
-                  />
-                  <h4 className="text-4xl font-bold text-foreground mb-3">{stat.number}</h4>
-                  <p className="text-muted-foreground font-medium">{stat.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
-          <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-3xl p-12 animate-on-scroll">
-            <div className="text-center mb-12">
-              <h3 className="text-4xl font-bold gradient-text mb-4">Our Core Values</h3>
-              <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                These fundamental principles guide every decision we make and every service we provide
+          {/* RIGHT: Stats grid */}
+          <div className="lg:col-span-2 animate-on-scroll">
+            <div className="grid grid-cols-2 gap-4 h-full">
+              {stats.map((s, i) => {
+                const Icon = s.icon
+                return (
+                  <div
+                    key={i}
+                    className="bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-white/6 rounded-2xl p-5 sm:p-6 flex flex-col items-center justify-center text-center hover:border-cyan-200 dark:hover:border-cyan-500/20 hover:shadow-lg dark:hover:shadow-cyan-500/5 transition-all duration-300 group"
+                  >
+                    <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${s.from} ${s.to} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <Icon className="h-5.5 w-5.5 text-white" />
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-1 tracking-tight">{s.number}</div>
+                    <div className="text-slate-500 dark:text-slate-500 text-xs font-medium">{s.label}</div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* ── CORE VALUES ── */}
+        <div className="animate-on-scroll">
+          <div className="relative bg-slate-900 dark:bg-slate-950 rounded-2xl p-8 sm:p-12 overflow-hidden border border-white/5">
+            <div className="absolute inset-0 pointer-events-none opacity-[0.07]"
+              style={{ backgroundImage: "radial-gradient(circle at 20% 50%, rgba(6,182,212,1), transparent 55%), radial-gradient(circle at 80% 50%, rgba(37,99,235,1), transparent 55%)" }} />
+
+            <div className="relative z-10 text-center mb-10">
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-2 tracking-tight">Our Core Values</h3>
+              <p className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto">
+                The principles that guide every project, every conversation, and every installation.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Innovation",
-                  description:
-                    "Continuously adopting cutting-edge technologies and sustainable practices to deliver superior HVAC solutions.",
-                },
-                {
-                  title: "Integrity",
-                  description:
-                    "Building trust through transparent communication, honest pricing, and reliable service delivery.",
-                },
-                {
-                  title: "Excellence",
-                  description:
-                    "Maintaining the highest standards in every project, from initial consultation to final installation and beyond.",
-                },
-              ].map((value, index) => (
-                <div key={index} className="text-center p-6 rounded-xl hover:bg-card/50 transition-colors">
-                  <h4 className="text-2xl font-bold text-foreground mb-4">{value.title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">{value.description}</p>
-                </div>
-              ))}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+              {coreValues.map((v, i) => {
+                const Icon = v.icon
+                return (
+                  <div key={i} className="border border-white/8 rounded-xl p-6 hover:bg-white/4 transition-colors duration-300">
+                    <div className={`w-9 h-9 rounded-lg ${v.bg} flex items-center justify-center mb-4`}>
+                      <Icon className={`h-4.5 w-4.5 ${v.color}`} />
+                    </div>
+                    <h4 className="font-bold text-white text-base mb-2">{v.title}</h4>
+                    <p className="text-slate-500 text-[0.82rem] leading-relaxed">{v.desc}</p>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
