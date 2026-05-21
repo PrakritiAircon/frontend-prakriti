@@ -9,8 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: "export",
-  // Remove basePath and assetPrefix - deleted from here
 };
  
 export default nextConfig;
